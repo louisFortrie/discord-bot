@@ -10,9 +10,13 @@ app.get("/", (req, res) => {
 
 // Démarre le serveur sur un port fourni par Render
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur web démarré sur le port ${PORT}`);
-});
+app
+  .listen(PORT, () => {
+    console.log(`Serveur web démarré sur le port ${PORT}`);
+  })
+  .on("error", (err) => {
+    console.error("Erreur du serveur Express:", err);
+  });
 
 // const client = new Client({
 //   intents: [

@@ -1,4 +1,18 @@
 const { Client, GatewayIntentBits } = require("discord.js");
+const express = require("express");
+const app = express();
+
+// Route de test
+app.get("/", (req, res) => {
+  res.send("Le bot est en ligne !");
+});
+
+// Démarre le serveur sur un port fourni par Render
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Serveur web démarré sur le port ${PORT}`);
+});
+
 require("dotenv").config();
 
 const client = new Client({

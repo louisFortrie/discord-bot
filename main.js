@@ -1,8 +1,8 @@
 const { Client, GatewayIntentBits } = require("discord.js");
-require("dotenv").config();
 const express = require("express");
 const app = express();
 
+require("dotenv").config();
 // Route de test
 app.get("/", (req, res) => {
   res.send("Le bot est en ligne !");

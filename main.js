@@ -21,6 +21,7 @@ client.on("messageCreate", (message) => {
   }
 });
 
-console.log("Lancement du bot...", process.env.TOKEN);
-
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN).catch((err) => {
+  console.error("Erreur lors de la connexion :", err);
+  process.exit(1);
+});
